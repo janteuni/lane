@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,100);
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
 
 
@@ -61,6 +61,30 @@ table {
 * {
   box-sizing: border-box;
 }
+a {
+  color: $light-blue;
+  text-decoration: none;
+}
+
+@mixin flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+}
+
 
 // main
 body {
@@ -74,7 +98,6 @@ header {
   width: 100%;
   padding-top: 8em;
   z-index: 1;
- // margin-bottom: -10px;
 }
 
 
@@ -84,10 +107,100 @@ header {
   background-color: $blue;
   text-align: center;
   width: 100%;
-  padding: 2em;
+  padding: 6em 2em 4em 2em;
   color: $light-blue;
   h1 {
     font-family: 'Amatic SC', cursive;
-    font-size: 6em;
+    font-size: 7em;
+    line-height: 1em;
+    margin-bottom: 1em;
+  }
+  p.desc {
+    margin: 0 auto;
+    font-weight: lighter;
+    width: 900px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: left;
+    strong {
+      font-weight: 400;
+    }
+  }
+  .activities {
+    @include flex();
+    width: 920px;
+    margin: 8em auto 8em auto;
+    .activity {
+      width: 285px;
+      text-align: center;
+      margin: 10px;
+      img {
+        width: 100%;
+      }
+      p {
+        font-size: 1.2em;
+        line-height: 3em;
+        font-weight: lighter;
+      }
+    }
+  }
+  .social {
+    margin-top: 4em;
+    @include flex();
+    font-size: 4em;
+    li {
+      margin: 12px;
+      -webkit-transition: all 300ms;
+      transition: all 300ms;
+      &:hover {
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 4em;
+  .contact {
+    margin-top: 8em;
+    margin-bottom: 1em;
+  }
+  p {
+    @include flex();
+    color: $dark-orange;
+  }
+  .ico-round {
+    margin: 5px;
+    display: block;
+    text-align: center;
+    padding-top: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4em;
+    border-radius: 100%;
+    background-color: $orange;
+    color: $light-orange;
+  }
+}
+
+
+@media screen and (max-width: 920px) {
+  .main {
+    h1 {
+      font-size: 5em;
+      margin-bottom: .8em;
+    }
+    p.desc {
+      width: 100%;
+    }
+    .activities {
+      width: 100%;
+    }
+    .social {
+      margin-top: 2em;
+    }
   }
 }
