@@ -204,3 +204,22 @@ footer {
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+  .show-mobile {
+    display: block;
+  }
+  .show-desktop {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 400px) {
+  .show-mobile {
+    display: none;
+  }
+  .show-desktop {
+    @include flex();
+  }
+}

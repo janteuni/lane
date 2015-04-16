@@ -176,3 +176,30 @@ footer {
     width: 100%; }
   .main .social {
     margin-top: 2em; } }
+
+@media screen and (max-width: 400px) {
+  .show-mobile {
+    display: block; }
+  .show-desktop {
+    display: none; } }
+
+@media screen and (min-width: 400px) {
+  .show-mobile {
+    display: none; }
+  .show-desktop {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center; } }
